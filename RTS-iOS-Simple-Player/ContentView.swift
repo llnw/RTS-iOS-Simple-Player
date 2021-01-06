@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  RTS-iOS-Simple-Player
+//  RTS iOS Simple Player
 //
-//  Created by Virgil Prewitt on 1/6/21.
+//  Created by Ted on 1/6/21.
 //
 
 import SwiftUI

@@ -1,0 +1,11 @@
+framework module LLNW_RTS {
+  umbrella header "LLNW_RTS.h"
+
+  export *
+  module * { export * }
+}
+
+module LLNW_RTS.Swift {
+    header "LLNW_RTS-Swift.h"
+    requires objc
+}

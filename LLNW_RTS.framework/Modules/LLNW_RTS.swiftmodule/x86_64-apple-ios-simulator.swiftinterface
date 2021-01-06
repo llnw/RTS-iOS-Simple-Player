@@ -1,0 +1,343 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name LLNW_RTS
+import Combine
+import Foundation
+@_exported import LLNW_RTS
+import Starscream
+import Swift
+import SwiftUI
+import UIKit
+import WebRTC
+import os.log
+import os
+@_hasMissingDesignatedInitializers @objc public class LLEventParameter : ObjectiveC.NSObject {
+  @objc public var event: LLNW_RTS.LLEvent
+  @objc public var log: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+@available(iOS 13.0, *)
+public struct LLSubscribeView : SwiftUI.UIViewRepresentable {
+  public init(client: LLNW_RTS.LLSubscriber, playing: SwiftUI.Binding<Swift.Bool>, action: @escaping (LLNW_RTS.LLEventParameter) -> Swift.Void)
+  public func makeUIView(context: LLNW_RTS.LLSubscribeView.Context) -> UIKit.UIView
+  public func updateUIView(_ uiView: UIKit.UIView, context: SwiftUI.UIViewRepresentableContext<LLNW_RTS.LLSubscribeView>)
+  public typealias UIViewType = UIKit.UIView
+  public typealias Coordinator = Swift.Void
+  public typealias Body = Swift.Never
+}
+public struct Ratio16x9 : SwiftUI.ViewModifier {
+  @available(iOS 13.0, *)
+  public func body(content: LLNW_RTS.Ratio16x9.Content) -> some SwiftUI.View
+  
+  public init()
+  public typealias Body = @_opaqueReturnTypeOf("$s8LLNW_RTS9Ratio16x9V4body7contentQr7SwiftUI21_ViewModifier_ContentVyACG_tF", 0) 🦸
+}
+public struct Ratio4x3 : SwiftUI.ViewModifier {
+  @available(iOS 13.0, *)
+  public func body(content: LLNW_RTS.Ratio4x3.Content) -> some SwiftUI.View
+  
+  public init()
+  public typealias Body = @_opaqueReturnTypeOf("$s8LLNW_RTS8Ratio4x3V4body7contentQr7SwiftUI21_ViewModifier_ContentVyACG_tF", 0) 🦸
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class LLNW_RTS : ObjectiveC.NSObject {
+  @objc public static func Subscriber() -> LLNW_RTS.LLSubscriber
+  @objc public static func Subscriber(options: LLNW_RTS.LLOptions) -> LLNW_RTS.LLSubscriber
+  @objc public static func Subscriber(shortname: Swift.String, stream: Swift.String) -> LLNW_RTS.LLSubscriber
+  @objc public static func Publisher() -> LLNW_RTS.LLPublisher
+  @objc public static func Publisher(options: LLNW_RTS.LLOptions) -> LLNW_RTS.LLPublisher
+  @objc public static func Options() -> LLNW_RTS.LLOptions
+  @objc public static func Options(settings: Foundation.UserDefaults, key: Swift.String) -> LLNW_RTS.LLOptions
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class LLSubscriber : LLNW_RTS.LLClient {
+  @objc public convenience init(shortname: Swift.String, stream: Swift.String)
+  @objc public convenience init(options opts: LLNW_RTS.LLOptions)
+  @objc public func subscribe()
+  @objc public func subscribe(shortname: Swift.String, stream: Swift.String)
+  @available(iOS 13.0, *)
+  public func subscribedVideo(play: SwiftUI.Binding<Swift.Bool>, action: @escaping (LLNW_RTS.LLEventParameter) -> Swift.Void) -> LLNW_RTS.LLSubscribeView
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class LLOptions : ObjectiveC.NSObject {
+  @objc public var shortname: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var stream: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var hostname: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var validationURL: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var secure: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var port: Swift.Int {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var autoplay: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var muted: Swift.Bool {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var version: Swift.String {
+    @objc get
+  }
+  @objc public var rendition: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var username: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var password: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var camera: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var publishURL: Swift.String {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc override dynamic public init()
+  @objc public init(settings: Foundation.UserDefaults, key: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+public class LLObservedOptions : Foundation.ObservableObject {
+  @Foundation.Published @_projectedValueProperty($shortname) public var shortname: Swift.String {
+    get
+    set(value)
+  }
+  public var $shortname: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($stream) public var stream: Swift.String {
+    get
+    set(value)
+  }
+  public var $stream: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($hostname) public var hostname: Swift.String {
+    get
+    set(value)
+  }
+  public var $hostname: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($validationURL) public var validationURL: Swift.String {
+    get
+    set(value)
+  }
+  public var $validationURL: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($secure) public var secure: Swift.Bool {
+    get
+    set(value)
+  }
+  public var $secure: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($port) public var port: Swift.Int {
+    get
+    set(value)
+  }
+  public var $port: Combine.Published<Swift.Int>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($autoplay) public var autoplay: Swift.Bool {
+    get
+    set(value)
+  }
+  public var $autoplay: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($muted) public var muted: Swift.Bool {
+    get
+    set(value)
+  }
+  public var $muted: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($rendition) public var rendition: Swift.String {
+    get
+    set(value)
+  }
+  public var $rendition: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($username) public var username: Swift.String {
+    get
+    set(value)
+  }
+  public var $username: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($password) public var password: Swift.String {
+    get
+    set(value)
+  }
+  public var $password: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($camera) public var camera: Swift.String {
+    get
+    set(value)
+  }
+  public var $camera: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @Foundation.Published @_projectedValueProperty($publishURL) public var publishURL: Swift.String {
+    get
+    set(value)
+  }
+  public var $publishURL: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, OSX 11.0, *)
+    set(value)
+  }
+  @objc deinit
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+}
+@objc public enum LLStatus : Swift.Int {
+  case subscribed
+  case subscribing
+  case unsubscribed
+  case publishing
+  case not_publishing
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class LLClient : ObjectiveC.NSObject {
+  @objc public var status: LLNW_RTS.LLStatus
+  @objc public var renditions: [Swift.String]
+  @objc public var options: LLNW_RTS.LLOptions
+  @objc public var data: LLNW_RTS.LLData
+  @objc public var subscribeRenderer: UIKit.UIView
+  @objc public var publishRenderer: UIKit.UIView
+  @objc override dynamic public init()
+  @objc public convenience init(options opts: LLNW_RTS.LLOptions)
+  @discardableResult
+  @objc public func on(event: LLNW_RTS.LLEvent, _ reference: @escaping (LLNW_RTS.LLEventParameter) -> Swift.Void) -> Swift.String
+  @objc public func off(event: LLNW_RTS.LLEvent, _ reference: Swift.String)
+  @objc public func unsubscribe()
+  @objc public func setRendition(_ bitrate: Swift.String)
+  @objc public func sendPublisherMessage(_ message: Swift.String)
+  @objc public func sendBroadcastMessage(_ message: Swift.String)
+  @objc public func sendPrivateMessage(to: [Swift.String], _ message: Swift.String)
+  @available(iOS 13.0, *)
+  public func observed() -> LLNW_RTS.LLObservedOptions
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class LLPublisher : LLNW_RTS.LLClient {
+  @objc override dynamic public init()
+  @objc public convenience init(options opts: LLNW_RTS.LLOptions)
+  @objc public func startIngest()
+  @objc public func stopIngest()
+  @available(iOS 13.0, *)
+  public func publishedVideo(publish: SwiftUI.Binding<Swift.Bool>, action: @escaping (LLNW_RTS.LLEventParameter) -> Swift.Void) -> LLNW_RTS.LLPublishView
+  @objc deinit
+}
+@objc public enum LLEvent : Swift.Int {
+  case Connect_Success
+  case Connect_Failure
+  case Subscribe_Start
+  case Subscribe_Fail
+  case Subscribe_InvalidName
+  case Subscribe_Stop
+  case Subscribe_Metadata
+  case Subscribe_Send_Invoke
+  case Subscribe_Play_Unpublish
+  case Subscribe_Connection_Closed
+  case Subscribe_Orientation_Change
+  case Subscribe_Volume_Change
+  case Subscribe_Time_Update
+  case Subscribe_Playback_Change
+  case Subscribe_FullScreen_Change
+  case Subscribe_Autoplay_Failure
+  case Subscribe_Autoplay_Muted
+  case WebRTC_PeerConnection_Available
+  case WebRTC_Offer_Start
+  case WebRTC_Offer_End
+  case WebRTC_Answer_Start
+  case WebRTC_Answer_End
+  case WebRTC_Candidate_Start
+  case WebRTC_Candidate_End
+  case WebRTC_IceTrickle_Complete
+  case Data_New_Message
+  case Data_Update
+  case Rendition_Changed
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class LLData : ObjectiveC.NSObject {
+  @objc public func retrieve() -> [Swift.String : Swift.String]
+  @objc public func retrieve(key: Swift.String) -> Any
+  @objc public func increment(key: Swift.String, increment: Swift.Int, createIfKeyMissing: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func decrement(key: Swift.String, decrement: Swift.Int, createIfKeyMissing: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func add(key: Swift.String, value: Any, failIfKeyPresent: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func update(key: Swift.String, value: Any, createIfKeyMissing: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func delete(key: Swift.String, failIfKeyMissing: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func listInsert(key: Swift.String, value: Any, createIfKeyMissing: Swift.Bool, failIfValuePresent: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func listRemove(key: Swift.String, value: Any, failIfKeyMissing: Swift.Bool, failIfValueMissing: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func swap(key: Swift.String, compare: Any, swap: Any, createIfKeyMissing: Swift.Bool, _ callback: @escaping (Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+@available(iOS 13.0, *)
+public struct LLPublishView : SwiftUI.UIViewRepresentable {
+  public init(client: LLNW_RTS.LLPublisher, publish: SwiftUI.Binding<Swift.Bool>, action: @escaping (LLNW_RTS.LLEventParameter) -> Swift.Void)
+  public func makeUIView(context: LLNW_RTS.LLPublishView.Context) -> UIKit.UIView
+  public func updateUIView(_ uiView: UIKit.UIView, context: SwiftUI.UIViewRepresentableContext<LLNW_RTS.LLPublishView>)
+  public typealias UIViewType = UIKit.UIView
+  public typealias Coordinator = Swift.Void
+  public typealias Body = Swift.Never
+}

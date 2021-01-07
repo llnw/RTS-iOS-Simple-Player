@@ -17,18 +17,18 @@
 		9F0273DC25A60E650032C64E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0273DA25A60E650032C64E /* LaunchScreen.storyboard */; };
 		9F0273EE25A614C60032C64E /* PublishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0273ED25A614C60032C64E /* PublishView.swift */; };
 		9F0273F225A614D60032C64E /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0273F125A614D60032C64E /* SubscribeView.swift */; };
-		9F02741025A646650032C64E /* LLNW_RTS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F02740A25A645F30032C64E /* LLNW_RTS.framework */; };
-		9F02741125A646650032C64E /* LLNW_RTS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F02740A25A645F30032C64E /* LLNW_RTS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F02741425A758D00032C64E /* LLNW_RTS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F02740A25A645F30032C64E /* LLNW_RTS.framework */; };
+		9F02741525A758D00032C64E /* LLNW_RTS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F02740A25A645F30032C64E /* LLNW_RTS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9F02741225A646650032C64E /* Embed Frameworks */ = {
+		9F02741625A758D00032C64E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F02741125A646650032C64E /* LLNW_RTS.framework in Embed Frameworks */,
+				9F02741525A758D00032C64E /* LLNW_RTS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,7 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68C25D3E1BE6D593728C8C7D /* Pods_RTS_iOS_Simple_Player.framework in Frameworks */,
-				9F02741025A646650032C64E /* LLNW_RTS.framework in Frameworks */,
+				9F02741425A758D00032C64E /* LLNW_RTS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +147,7 @@
 				9F0273C625A60E640032C64E /* Frameworks */,
 				9F0273C725A60E640032C64E /* Resources */,
 				6BEBAFD50854D694622F808B /* [CP] Embed Pods Frameworks */,
-				9F02741225A646650032C64E /* Embed Frameworks */,
+				9F02741625A758D00032C64E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
